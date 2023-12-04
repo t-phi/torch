@@ -1,0 +1,40 @@
+{
+  meta: {
+    type: "dædalus",
+    version: "1.0",
+    servicetype:  "web",
+    tenant_root: "./cfg/",
+    config_type: "main_config",
+  },
+  maininfo: {
+    validApplications: [
+        "registration",
+        "enrolment",
+        "modification",
+        "expiredPassword",
+        "forgottenPassword",
+        "challengeResponse",
+        "lockout",
+        "forcePasswordChange",
+        "delegation",
+        "bulk_registration",
+        "bulk_enrolment",
+        "webRouter",
+        "adminmain",
+        "autologout
+    ]
+  }
+
+  tenants:
+  {
+      admin: {
+        location: "admin",
+        appsconfig: "appmain.jfg",
+      },
+      pm: {
+        location: "public_mobile",
+        appsconfig: "appmain.jfg",
+      },
+
+  }
+}
