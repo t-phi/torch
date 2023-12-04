@@ -1,0 +1,21 @@
+{
+  "meta": {
+    "type": "dædalus",
+    "version": "1.0",
+    "servicetype":  "web",
+    "config_root": "",
+    "config_type": "templates", // use json schema?
+  },
+
+  "pages": {
+      "_init": {
+            filename: "templates/1.template",
+            engine: "handlebars",
+      },
+      "PRINTPAGE-USER_DATA-PP01-DEFAULT": {
+            filename: "templates/2.template",
+            engine: "handlebars",
+      },
+
+  }
+}

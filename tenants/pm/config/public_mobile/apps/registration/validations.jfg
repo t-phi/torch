@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "type": "dædalus",
+    "version": "1.0",
+    "servicetype":  "web",
+    "config_root": "",
+    "config_type": "validations", // use json schema?
+  },
+
+  "pages": {
+      "_init": {
+            MANDATORY_FIELD: { regex: ".+"  }
+      },
+      "PRINTPAGE-USER_DATA-PP01-DEFAULT": {
+            MANDATORY_FIELD: { regex: ".+"  }
+      },
+
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "type": "dædalus",
+    "version": "1.0",
+    "servicetype":  "web",
+    "tenant_root": "./cfg/",
+    "config_type": "main_config"
+  },
+
+  "maininfo": {
+    "validApplications": [
+        "registration",
+        "enrolment",
+        "modification",
+        "expiredPassword",
+        "forgottenPassword",
+        "challengeResponse",
+        "lockout",
+        "forcePasswordChange",
+        "delegation",
+        "bulk_registration",
+        "bulk_enrolment",
+        "webRouter",
+        "adminmain",
+        "autologout"
+    ]
+  },
+
+  "tenants":
+  {
+      "admin": {
+        "EN": {
+            "location": "admin",
+            "apps_config": "appmain-e.jfg"
+        },
+        "FR": {
+            "location": "admin",
+            "apps_config": "appmain-f.jfg"
+        }
+      },
+      "pm": {
+        "EN": {
+            "location": "public_mobile",
+            "apps_config": "appmain-e.jfg"
+        },
+        "FR": {
+            "location": "public_mobile",
+            "apps_config": "appmain-f.jfg"
+        }
+      }
+  }
+}

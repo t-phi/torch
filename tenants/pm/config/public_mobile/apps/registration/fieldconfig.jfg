@@ -1,0 +1,327 @@
+{
+  meta: {
+    type: "dædalus",
+    version: "1.0",
+    servicetype:  "web",
+    config_root: "",
+    config_type: "field_config", // use json schema?
+  },
+
+  pages: {  /// differentiate between constants, input variables, session variables, values coming back from external functions? // variable scoping?
+    "_init": {
+        UserID:           {   default_value:  "",            displayValue:   "UserID",            description:    "" },
+        Brand:            {   default_value:  "",            displayValue:   "BrandID",           description:    "" },
+        DataSource:       {   default_value:  "forgerock",   displayValue:   "Datasource",        description:    "" },
+        RecordType:       {   default_value:  "Person",      displayValue:   "Recordtype",        description:    "" },
+        serviceUtility:   {   default_value:  "",            displayValue:   "ServiceUtility",    description:    "", viewable: "false" },
+        default_TARGET:   {   default_value:  "http://www.gov.ab.ca",            displayValue:   "TARGET",            description:    "" },
+        protected_TARGET: {   default_value:  "/protected/",            displayValue:   "ProtectedTarget",            description:    "" },
+        TARGET:           {   default_value:  "",            displayValue:   "TARGET",            description:    "" },
+        Prefix:           {   default_value:  "",            displayValue:   "Prefix",            description:    "" },
+        LegalFirstName:   {   default_value:  "",            displayValue:   "First Given Name",  description:    "" },
+        Surname:          {   default_value:  "",            displayValue:   "Surname",           description:    "" },
+        PreferredName:    {   default_value:  "",            displayValue:   "Preferred Name",    description:    "" },
+        DOB_Year:         {   default_value:  "",            displayValue:   "Birth Year",        description:    "" },
+        DOB_Month:        {   default_value:  "",            displayValue:   "Birth Month",       description:    "" },
+        DOB_DD:           {   default_value:  "",            displayValue:   "Birth Day",         description:    "" },
+        Gender:           {   default_value:  "",            displayValue:   "Birth Day",         description:    "" },
+        birthdate:        {   default_value:  "",            displayValue:   "Birthdate",         description:    "" },
+        actionRetval:     {   default_value:  "",            displayValue:   "Return Code",       description:    "" },
+        Challenge_Question_1:         {   default_value:  "1",            displayValue:   "In what city or town were you born?",         description:    "" },
+        Challenge_Question_2:         {   default_value:  "2",            displayValue:   "Who was your best friend while you were growing up?",         description:    "" },
+        Challenge_Question_3:         {   default_value:  "3",            displayValue:   "What was your favourite class or subject in school?",         description:    "" },
+        Challenge_Question_4:         {   default_value:  "4",            displayValue:   "What was your first job?",         description:    "" },
+        Challenge_Question_5:         {   default_value:  "5",            displayValue:   "What is the location of your dream vacation?",         description:    "" },
+        UserLanguage:         {   default_value:  "",            displayValue:   "",         description:    "" },
+      },
+
+      REGISTRATION-USER_DATA-R01-DEFAULT: {
+          TARGET: {   default_value:  "",            displayValue:   "Target",         description:    "" },
+          LOGIN_TARGET: {   default_value:  "/apps/protected/enrolment/",            displayValue:   "Enrol Target",         description:    "" },
+      }
+
+      REGISTRATION-USER_DATA-R01-1-DEFAULT: {
+          TARGET: {   default_value:  "",            displayValue:   "Target",         description:    "" },
+          LOGIN_TARGET: {   default_value:  "/apps/protected/enrolment/",            displayValue:   "Enrol Target",         description:    "" },
+      }
+
+      REGISTRATION-USER_DATA-R02-DEFAULT: {
+          TARGET: {   default_value:  "",            displayValue:   "Target",         description:    "" },
+
+      }
+
+      <page id="REGISTRATION-USER_DATA-R02-DEFAULT">
+        <field name="Prefix" 					          defaultValue="" displayValue="Prefix"           	description=""/>
+        <field name="LegalFirstName" 			      defaultValue="" displayValue="First Given Name" 	description=""/>
+        <field name="MiddleName" 				        defaultValue="" displayValue="Middle Name"      	description=""/>
+        <field name="Surname" 					        defaultValue="" displayValue="Surname"          	description=""/>
+        <field name="Suffix" 					          defaultValue="" displayValue="Suffix"           	description=""/>
+        <field name="PreferredName" 			      defaultValue="" displayValue="Preferred Name"   description=""/>
+        <field name="DOB_Year"					        defaultValue="" displayValue="Date of Birth - Year"	    	description=""/>
+        <field name="DOB_Month" 				        defaultValue="" displayValue="Date of Birth - Month"		   description=""/>
+        <field name="DOB_DD" 					          defaultValue="" displayValue="Date of Birth - Day"	    	   description=""/>
+        <field name="date_delimiter"            defaultValue="/" displayValue="Date Delimiter" description=""/>
+        <field name="Birthdate"                 defaultValue="" displayValue="Birth Date"       description=""/>
+        <field name="Gender" 					          defaultValue="" displayValue="Gender"           	description=""/>
+        <field name="actionRetval"      		    defaultValue="" displayValue="return Code"/>
+        <field name="logRetval"                 defaultValue="" displayValue="Log return Code"/>
+        <field name="LOGLEVEL"                  defaultValue="DEBUG" displayValue="LOGLEVEL"           	description=""/>
+        <field name="MSGKEY"                    defaultValue="0000" displayValue="MSGKEY"           	description=""/>
+      </page>
+
+      <page id="REGISTRATION-USER_DATA-R03-1-DEFAULT">
+        <field name="Organisation"				      defaultValue="" displayValue="Organisation"/>
+        <field name="Dept_POBox_Suite" 		      defaultValue="" displayValue="Department, Suite"/>
+        <field name="Street_Address_1" 		      defaultValue="" displayValue="Street Address 1"/>
+        <field name="Street_Address_2" 		      defaultValue="" displayValue="Street Address 2"/>
+        <field name="Municipality"				      defaultValue="" displayValue="Municipality Name"/>
+        <field name="Province_State"			      defaultValue="" displayValue="Province/State Code"/>
+        <field name="Country_Code"				      defaultValue="" displayValue="Country" />
+        <field name="Postal_ZIP_Code"			      defaultValue="" displayValue="Postal/Zip Code" />
+        <field name="Country_Phone_Code"		    defaultValue="" displayValue="Country Phone Code"/>
+        <field name="NA_Business_Phone_Area"    defaultValue="" displayValue=""/>
+        <field name="NA_Business_Phone_Prefix"  defaultValue="" displayValue=""/>
+        <field name="NA_Business_Phone_No"		  defaultValue="" displayValue=""/>
+        <field name="INT_Business_Phone_Area"   defaultValue="" displayValue=""/>
+        <field name="INT_Business_Phone_No" 		defaultValue="" displayValue=""/>
+        <field name="Business_Phone_Number"     defaultValue="" displayValue="Phone Number"/>
+        <field name="Business_Phone_Ext"	    	defaultValue="" displayValue="Extension"/>
+        <field name="NA_FAX_Area"								defaultValue="" displayValue=""/>
+        <field name="NA_FAX_Prefix"							defaultValue="" displayValue=""/>
+        <field name="NA_FAX_No"									defaultValue="" displayValue=""/>
+        <field name="INT_FAX_Area"							defaultValue="" displayValue=""/>
+        <field name="INT_FAX_No"								defaultValue="" displayValue=""/>
+        <field name="FAX_Number" 				        defaultValue="" displayValue="Fax Number"/>
+        <field name="Contact_Email_Address"	    defaultValue="" displayValue="Email Address"/>
+        <field name="actionRetval"      		    defaultValue="" displayValue="Return Code"/>
+        <field name="UserID"                    defaultValue="" displayValue="UserID" />
+        <field name="empty_field"								defaultValue="" displayValue="Empty Field" />
+      </page>
+
+      <page id="REGISTRATION-USER_DATA-R04-1-DEFAULT">
+        <field name="Brand"                     defaultValue="" displayValue="Brand" description="" />
+        <field name="Mothers_Maiden_name" 		  defaultValue="" displayValue="Mother's Maiden Name" description=""/>
+        <field name="Challenge_Question_1" 		  defaultValue="1" displayValue="In what city or town were you born?" description="" />
+        <field name="Challenge_Question_2" 		  defaultValue="2" displayValue="Who was your best friend while you were growing up?" description="" />
+        <field name="Challenge_Question_3" 		  defaultValue="3" displayValue="What was your favourite class or subject in school?" description="" />
+        <field name="Challenge_Question_4" 		  defaultValue="4" displayValue="What was your first job?" description="" />
+        <field name="Challenge_Question_5" 		  defaultValue="5" displayValue="What is the location of your dream vacation?"  description=""/>
+        <field name="Challenge_Response_1" 		  defaultValue="" displayValue="Challenge Response 1" description=""/>
+        <field name="Challenge_Response_2" 		  defaultValue="" displayValue="Challenge Response 2" description=""/>
+        <field name="Challenge_Response_3" 		  defaultValue="" displayValue="Challenge Response 3" description=""/>
+        <field name="Challenge_Response_4" 		  defaultValue="" displayValue="Challenge Response 4" description=""/>
+        <field name="Challenge_Response_5" 		  defaultValue="" displayValue="Challenge Response 5" description=""/>
+        <field name="qa1"                       defaultValue="" displayValue="QA 1" description="" />
+        <field name="qa2"                       defaultValue="" displayValue="QA 2" description="" />
+        <field name="qa3"                       defaultValue="" displayValue="QA 3" description="" />
+        <field name="qa4"                       defaultValue="" displayValue="QA 4" description="" />
+        <field name="qa5"                       defaultValue="" displayValue="QA 5" description="" />
+        <field name="qa_parent"                 defaultValue="" displayValue="QA Parent Structure" description="" />
+        <field name="qa_delimiter"              defaultValue=":" displayValue="QA Delimiter" description="" />
+
+        <field name="Password"				   	      defaultValue="" displayValue="Password" description=""/>
+        <field name="Confirm_Password"          defaultValue="" displayValue="Confirm Password" description=""/>
+        <field name="AuthLevel"                 defaultValue="1" displayValue="" description="" />
+        <field name="UserID"                    defaultValue="" displayValue="UserId" description=""/>
+        <field name="_Consent"          	   	  defaultValue="1" displayValue="Consent"    description=""/>
+        <field name="_SSODisabled"      	   	  defaultValue="5" displayValue="SSO Disabled"    description=""/>
+        <field name="Registration_Type"			    defaultValue="000" displayValue="Registration Type" />
+        <field name="Contact_Email_Address"		  defaultValue="" displayValue="Contact Email Address"/>
+        <field name="DisabledFlag"              defaultValue="" displayValue="" description="" />
+
+        <field name="actionRetval"              defaultValue=""  displayValue="Return Code" description="" />
+        <field name="serviceUtility"        	  defaultValue="health" displayValue="" />
+        <field name="userIDcreate"        	    defaultValue="TRUE" displayValue="" />
+
+        <field name="syserror_create_failure"		defaultValue="ASAS-COMM-SREG-001" displayValue="Error Code" description=""/>
+        <field name="syserror_code"							defaultValue="" displayValue="Error Code" description=""/>
+      </page>
+
+      <page id="REGISTRATION-USER_DATA-R05-1-DEFAULT">
+        <field name="Prefix" 					          defaultValue="" displayValue="Prefix"           	description=""/>
+        <field name="LegalFirstName" 			      defaultValue="" displayValue="First Given Name" 	description=""/>
+        <field name="MiddleName" 				        defaultValue="" displayValue="Middle Name"      	description=""/>
+        <field name="Surname" 					        defaultValue="" displayValue="Surname"          	description=""/>
+        <field name="Suffix" 					          defaultValue="" displayValue="Suffix"           	description=""/>
+        <field name="PreferredName" 			      defaultValue="" displayValue="Preferred Name"   description=""/>
+        <field name="Birthdate"                 defaultValue="" displayValue="Date of Birth"	    description=""/>
+        <field name="Gender" 					          defaultValue="" displayValue="Gender"           	description=""/>
+        <field name="Organisation"				      defaultValue="" displayValue="Organisation"/>
+        <field name="Dept_POBox_Suite" 		      defaultValue="" displayValue="Department, Suite"/>
+        <field name="Street_Address_1" 		      defaultValue="" displayValue="Street Address 1"/>
+        <field name="Street_Address_2" 		      defaultValue="" displayValue="Street Address 2"/>
+        <field name="Municipality"				      defaultValue="" displayValue="Municipality Name"/>
+        <field name="Province_State"			      defaultValue="" displayValue="Province/State"/>
+        <field name="Country_Code"				      defaultValue="" displayValue="Country" />
+        <field name="Postal_ZIP_Code"			      defaultValue="" displayValue="Postal/Zip Code" />
+        <field name="Country_Phone_Code"		    defaultValue="" displayValue="Contact Phone Code"/>
+        <field name="Business_Phone_No"		      defaultValue="" displayValue=""/>
+        <field name="Business_Phone_Number"     defaultValue="" displayValue="Contact Phone No."/>
+        <field name="Business_Phone_No_Ext"	    defaultValue="" displayValue="Contact Phone No. Ext."/>
+        <field name="FAX_Number" 				        defaultValue="" displayValue="FAX Number"/>
+        <field name="Contact_Email_Address"	    defaultValue="" displayValue="Contact Email Address"/>
+        <field name="Mothers_Maiden_name" 	    defaultValue="" displayValue="Mother's Maiden Name" description=""/>
+        <field name="Challenge_Question_1" 	    defaultValue="1" displayValue="In what city or town were you born?" description="" />
+        <field name="Challenge_Question_2" 	    defaultValue="2" displayValue="Who was your best friend while you were growing up?" description="" />
+        <field name="Challenge_Question_3" 	    defaultValue="3" displayValue="What was your favourite class or subject in school?" description="" />
+        <field name="Challenge_Question_4" 	    defaultValue="4" displayValue="What was your first job?" description="" />
+        <field name="Challenge_Question_5" 	    defaultValue="5" displayValue="What is the location of your dream vacation?"  description=""/>
+        <field name="Challenge_Response_1" 	    defaultValue="" displayValue="Challenge Response 1" description=""/>
+        <field name="Challenge_Response_2" 	    defaultValue="" displayValue="Challenge Response 2" description=""/>
+        <field name="Challenge_Response_3" 	    defaultValue="" displayValue="Challenge Response 3" description=""/>
+        <field name="Challenge_Response_4" 	    defaultValue="" displayValue="Challenge Response 4" description=""/>
+        <field name="Challenge_Response_5" 	    defaultValue="" displayValue="Challenge Response 5" description=""/>
+        <field name="Password"				   	      defaultValue="" displayValue="Password" description=""/>
+        <field name="Confirm_Password"          defaultValue="" displayValue="Confirm Password" description=""/>
+        <field name="DisabledFlag"              defaultValue="" displayValue="" description="" />
+        <field name="UserAccountControl"        defaultValue="" displayValue="" description="" />
+        <field name="AuthLevel"                 defaultValue="1" displayValue="" description="" />
+        <field name="UserID"                    defaultValue="" displayValue="UserId" description=""/>
+
+        <!-- <field name="LoginUrl"                  defaultValue="https://public.secureaccess.gov.ab.ca/login/login.fcc"   displayValue="LoginUrl" description="" /> -->
+        <field name="LoginUrl"
+                      defaultValue="/IAU/LoginUrl/defaultValueExtern"
+                      displayValue="LoginUrl"
+                      description=""
+                      externalRead="/data/shortcircuit/envconf.xml" />
+
+        <field name="SmAuthReason"              defaultValue="0"             displayValue="AuthReason" description=""  />
+        <field name="ProtectedTarget"           defaultValue="/protected/"   displayValue="ProtectedTarget" description=""  />
+        <field name="COOKIE_FORMCRED"           defaultValue=""   displayValue="FormCred" description=""/>
+        <field name="COOKIE_SMSESSION"          defaultValue=""   displayValue="SiteMinderSession" description=""/>
+        <field name="SM_EXCEPTION"              defaultValue=""   displayValue="SiteMinder Autologin Exception" description=""/>
+        <field name="ENROL_TARGET"              defaultValue="/apps/protected/enrolment/" displayValue="Enrol Target" description=""/>
+        <field name="MODIFY_TARGET"             defaultValue="/apps/protected/modification/" displayValue="Modify Target" description=""/>
+        <field name="TARGET"                    defaultValue="" displayValue="Target" description=""/>
+        <field name="actionRetval"              defaultValue="" displayValue="Return Code" description="" />
+        <field name="userCreationTriggered"     defaultValue="" displayValue="" description="" />
+        <field name="UserLanguage"              defaultValue="" displayValue="" description="" />
+
+        <field name="syserror_create_failure"		defaultValue="ASAS-COMM-SREG-002" displayValue="Error Code" description=""/>
+        <field name="syserror_code"							defaultValue="" displayValue="Error Code" description=""/>
+      </page>
+
+      <page id="REGISTRATION-USER_DATA-R05-2-DEFAULT">
+        <field name="Prefix" 					          defaultValue="" displayValue="Prefix"           	description=""/>
+        <field name="LegalFirstName" 			      defaultValue="" displayValue="First Given Name" 	description=""/>
+        <field name="MiddleName" 				        defaultValue="" displayValue="Middle Name"      	description=""/>
+        <field name="Surname" 					        defaultValue="" displayValue="Surname"          	description=""/>
+        <field name="Suffix" 					          defaultValue="" displayValue="Suffix"           	description=""/>
+        <field name="PreferredName" 			      defaultValue="" displayValue="Preferred Name"   description=""/>
+        <field name="Birthdate"                 defaultValue="" displayValue="Birth Date"       description=""/>
+        <field name="DOB_Year"					        defaultValue="" displayValue="Date of Birth - Year"	    	description=""/>
+        <field name="DOB_Month" 				        defaultValue="" displayValue="Date of Birth - Month"		   description=""/>
+        <field name="DOB_DD" 					          defaultValue="" displayValue="Date of Birth - Day"	    	   description=""/>
+        <field name="Gender" 					          defaultValue="" displayValue="Gender"           	description=""/>
+        <field name="Organisation"				      defaultValue="" displayValue="Organisation"/>
+        <field name="Dept_POBox_Suite" 		      defaultValue="" displayValue="Department, Suite"/>
+        <field name="Street_Address_1" 		      defaultValue="" displayValue="Street Address 1"/>
+        <field name="Street_Address_2" 		      defaultValue="" displayValue="Street Address 2"/>
+        <field name="Municipality"				      defaultValue="" displayValue="Municipality"/>
+        <field name="Province_State"			      defaultValue="" displayValue="Province/State"/>
+        <field name="Country_Code"				      defaultValue="" displayValue="Country" />
+        <field name="Postal_ZIP_Code"			      defaultValue="" displayValue="Postal/Zip Code" />
+        <field name="Country_Phone_Code"		    defaultValue="" displayValue="Contact Phone Code"/>
+        <field name="Business_Phone_No"		      defaultValue="" displayValue=""/>
+        <field name="Business_Phone_Number"     defaultValue="" displayValue="Contact Phone No."/>
+        <field name="Business_Phone_No_Ext"	    defaultValue="" displayValue="Contact Phone No. Ext."/>
+        <field name="FAX_Number" 				        defaultValue="" displayValue="FAX Number"/>
+        <field name="Contact_Email_Address"	    defaultValue="" displayValue="Contact Email Address"/>
+        <field name="Mothers_Maiden_name" 	    defaultValue="" displayValue="Mother's Maiden Name" description=""/>
+        <field name="Challenge_Question_1" 	    defaultValue="1" displayValue="In what city or town were you born?" description="" />
+        <field name="Challenge_Question_2" 	    defaultValue="2" displayValue="Who was your best friend while you were growing up?" description="" />
+        <field name="Challenge_Question_3" 	    defaultValue="3" displayValue="What was your favourite class or subject in school?" description="" />
+        <field name="Challenge_Question_4" 	    defaultValue="4" displayValue="What was your first job?" description="" />
+        <field name="Challenge_Question_5" 	    defaultValue="5" displayValue="What is the location of your dream vacation?"  description=""/>
+        <field name="Challenge_Response_1" 	    defaultValue="" displayValue="Challenge Response 1" description=""/>
+        <field name="Challenge_Response_2" 	    defaultValue="" displayValue="Challenge Response 2" description=""/>
+        <field name="Challenge_Response_3" 	    defaultValue="" displayValue="Challenge Response 3" description=""/>
+        <field name="Challenge_Response_4" 	    defaultValue="" displayValue="Challenge Response 4" description=""/>
+        <field name="Challenge_Response_5" 	    defaultValue="" displayValue="Challenge Response 5" description=""/>
+        <field name="Password"				   	      defaultValue="" displayValue="Password" description=""/>
+        <field name="Confirm_Password"          defaultValue="" displayValue="Confirm Password" description=""/>
+        <field name="DisabledFlag"              defaultValue="" displayValue="" description="" />
+        <field name="UserAccountControl"        defaultValue="" displayValue="" description="" />
+        <field name="UserID"                    defaultValue="" displayValue="UserId" description=""/>
+
+        <!-- <field name="LoginUrl"                  defaultValue="https://public.secureaccess.gov.ab.ca/login/login.fcc"   displayValue="LoginUrl" description="" /> -->
+        <field name="LoginUrl"
+                      defaultValue="/IAU/LoginUrl/defaultValueExtern"
+                      displayValue="LoginUrl"
+                      description=""
+                      externalRead="/data/shortcircuit/envconf.xml" />
+
+        <field name="SmAuthReason"              defaultValue="0"             displayValue="AuthReason" description=""  />
+        <field name="ProtectedTarget"           defaultValue="/protected/"   displayValue="ProtectedTarget" description=""  />
+        <field name="COOKIE_FORMCRED"           defaultValue=""   displayValue="FormCred" description=""/>
+        <field name="COOKIE_SMSESSION"          defaultValue=""   displayValue="SiteMinderSession" description=""/>
+        <field name="SM_EXCEPTION"              defaultValue=""   displayValue="SiteMinder Autologin Exception" description=""/>
+        <field name="ENROL_TARGET"              defaultValue="/apps/protected/enrolment/" displayValue="Enrol Target" description=""/>
+        <field name="MODIFY_TARGET"             defaultValue="/apps/protected/modification/" displayValue="Modify Target" description=""/>
+        <field name="TARGET"                    defaultValue="" displayValue="Target" description=""/>
+        <field name="actionRetval"              defaultValue="" displayValue="Return Code" description="" />
+        <field name="userCreationTriggered"     defaultValue="" displayValue="" description="" />
+        <field name="UserLanguage"              defaultValue="" displayValue="" description="" />
+
+        <field name="syserror_code"							defaultValue="" displayValue="Error Code" description=""/>
+      </page>
+
+      <page id="REGISTRATION-USER_DATA-REDIRECT-ERROR">
+        <field name="syserror_code"							defaultValue="" displayValue="Error Code" description=""/>
+        <field name="UserID"                    defaultValue="" displayValue="UserId" description=""/>
+        <field name="actionRetval"              defaultValue=""  displayValue="Return Code" description="" />
+        <field name="TARGET"                    defaultValue="" displayValue="Target" description=""/>
+      </page>
+
+      <page id="REGISTRATION-USER_DATA-REDIRECT-LOGOFF">
+        <field name="LOGOFF_URL"         				defaultValue="/apps/logoff/"  displayValue="LOG OFF"  description="" />
+        <field name="TARGET"                    defaultValue="" displayValue="Target" description=""/>
+
+      <field name="DEFAULT_TARGET"
+        defaultValue="/IAU/LOGOFF_TARGET/defaultValueEXTERN"
+        displayValue=""
+        description=""
+        externalRead="/data/shortcircuit/envconf.xml" />
+
+      </page>
+
+      <page id="REGISTRATION-USER_DATA-REDIRECT-ENROL">
+        <field name="UserID"              	    defaultValue=""       displayValue="EXTERN UserId" description=""/>
+       <!-- <field name="LoginUrl"                  defaultValue="https://dev1-extern.secureaccess.gov.ab.ca/login/login.fcc"   displayValue="LoginUrl" description="" /> -->
+       <field name="LoginUrl"
+                      defaultValue="/IAU/LoginUrl/defaultValueExtern"
+                      displayValue="LoginUrl"
+                      description=""
+                      externalRead="/data/shortcircuit/envconf.xml" />
+        <field name="SmAuthReason"              defaultValue="0"             displayValue="AuthReason" description=""  />
+        <field name="ProtectedTarget"           defaultValue="/protected/"   displayValue="ProtectedTarget" description=""  />
+        <field name="COOKIE_FORMCRED"           defaultValue=""              displayValue="FormCred" description=""/>
+        <field name="COOKIE_SMSESSION"          defaultValue=""              displayValue="SiteMinderSession" description=""/>
+        <field name="SM_EXCEPTION"              defaultValue=""              displayValue="SiteMinder Autologin Exception" description=""/>
+        <field name="ENROL_TARGET"              defaultValue="/apps/protected/enrolment/" displayValue="Enrol Target" description=""/>
+        <field name="TARGET"                    defaultValue="" displayValue="Target" description=""/>
+      </page>
+
+      <page id="REGISTRATION-USER_DATA-REDIRECT-MOD">
+        <field name="UserID"              	    defaultValue=""       displayValue="EXTERN UserId" description=""/>
+       <!-- <field name="LoginUrl"                  defaultValue="https://dev1-extern.secureaccess.gov.ab.ca/login/login.fcc"   displayValue="LoginUrl" description="" /> -->
+       <field name="LoginUrl"
+                      defaultValue="/IAU/LoginUrl/defaultValueExtern"
+                      displayValue="LoginUrl"
+                      description=""
+                      externalRead="/data/shortcircuit/envconf.xml" />
+        <field name="SmAuthReason"              defaultValue="0"             displayValue="AuthReason" description=""  />
+        <field name="ProtectedTarget"           defaultValue="/protected/"   displayValue="ProtectedTarget" description=""  />
+        <field name="COOKIE_FORMCRED"           defaultValue=""              displayValue="FormCred" description=""/>
+        <field name="COOKIE_SMSESSION"          defaultValue=""              displayValue="SiteMinderSession" description=""/>
+        <field name="SM_EXCEPTION"              defaultValue=""              displayValue="SiteMinder Autologin Exception" description=""/>
+        <field name="MOD_TARGET"                defaultValue="/apps/protected/modification/" displayValue="Enrol Target" description=""/>
+        <field name="TARGET"                    defaultValue="" displayValue="Target" description=""/>
+      </page>
+
+
+
+    },
+
+  }
+}

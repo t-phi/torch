@@ -1,0 +1,110 @@
+{
+  meta: {
+    type: "dædalus",
+    version: "1.0",
+    servicetype:  "web",
+    config_root: "",
+    config_type: "page_config", // use json schema?
+  },
+
+  pages: {
+      _init: {
+          startDecision: check_target,
+
+          decisions: {
+              check_target: {
+                  nextTrue: ":decodeTarget",
+                  nextFalse: ":set_default_target",
+                  nextState: "DEFAULT",
+                  actions: [
+                      {validation: {
+                          errorCode: "MANDATORY_FIELD",
+                          inputName: TARGET,
+                          displayValue: "",
+                      }}, // end validation
+                  ], // end actions
+              }, //end decision
+
+              set_default_target: { /// candidate for simplication in framework ... string manipulation functions that can be scripted IN configs...
+                  nextTrue: ":decodeTarget",
+                  nextFalse: ":decode_target",
+                  nextState: "DEFAULT",
+                  actions: [
+                      {localAction: {
+                         className: ".plugins.localactions.StandardLocalValidationsPlugin",
+                         method: "copy",
+                         parameters: [
+                            {name: value1, inputValue: default_TARGET }
+                         ],
+                         imports: [
+                            {name: TARGET, returnValue: value1 }
+                         ],
+                      }}, // end localaction
+                  ], //end actions
+                }, //end page
+
+                decode_target: {
+                    nextTrue: "REGISTRATION-USER_DATA-R01-DEFAULT",
+                    nextFalse: "REGISTRATION-USER_DATA-R01-DEFAULT",
+                    nextState: "DEFAULT",
+                    actions: [
+                        {localAction: {
+                           className: ".plugins.localactions.StandardLocalValidationsPlugin",
+                           method: "decodeURL",
+                           parameters: [
+                               {name: value1, inputValue: default_TARGET }
+                           ],
+                           imports: [
+                               {name: TARGET, returnValue: decodedTarget }
+                           ],
+                        }}, // end localaction
+                    ], //end actions
+                },end decision
+          }, // end decisions
+      }, //end page
+
+
+      // Privacy Notice
+      REGISTRATION-USER_DATA-R01-DEFAULT: {
+          startDecision: check_target,
+          decisions: {
+              "check_disagree": {
+                  nextTrue: "REGISTRATION-USER_DATA-R01-1-DEFAULT",
+                  nextFalse: ":check_agree",
+                  nextState: "DEFAULT",
+                  actions: [
+                      { validation: {
+                          errorCode: "BUTTON_CLICKED",
+                          inputName: "__DISAGREE.x",
+                          displayValue: "",
+                      }},
+                  ], //end actions
+              }, // end decision
+
+              "check_agree": {
+                  nextTrue: "REGISTRATION-USER_DATA-R02-DEFAULT",
+                  nextFalse: "REGISTRATION-USER_DATA-R01-DEFAULT",
+                  nextState: "DEFAULT",
+                  actions: [
+                      {validation: {
+                          errorCode: "BUTTON_CLICKED",
+                          inputName: "__AGREE.x",
+                          displayValue: "",
+                      }},
+                  ], //end actions
+              }, // end decision
+            }, // end decision set
+          }, // end page
+
+
+          // Privacy Notice
+          REGISTRATION-USER_DATA-R02-DEFAULT: {
+              startDecision: check_target,
+              decisions: {
+                  "check_disagree": {
+                      
+                  }, // end decision
+                }, // end decision set
+              }, // end page
+      }, // end page set
+} end object

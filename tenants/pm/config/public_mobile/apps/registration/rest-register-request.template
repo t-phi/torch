@@ -1,0 +1,22 @@
+--header "X-OpenIDM-Username: anonymous" \
+--header "X-OpenIDM-Password: anonymous" \
+--header "X-OpenIDM-NoSession: true" \
+--request GET \
+"https://idm.example.com:8443/openidm/selfservice/registration"
+{
+ "_id": "1",
+ "_rev": "1113597344",
+ "type": "parameters",
+ "tag": "initial",
+ "requirements": {
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "description": "Parameters",
+   "type": "object",
+   "properties": {
+     "returnParams": {
+       "description": "Parameter named 'returnParams'",
+       "type": "string"
+     }
+   }
+ }
+}
