@@ -1,0 +1,12 @@
+{"level":"error","message":"Error message","timestamp":"2023-08-26T14:53:18.850Z"}
+{"level":"warn","message":"Warning message","timestamp":"2023-08-26T14:53:18.851Z"}
+{"level":"info","message":"Info message","timestamp":"2023-08-26T14:53:18.852Z"}
+{"level":"verbose","message":"Verbose message","timestamp":"2023-08-26T14:53:18.852Z"}
+{"level":"debug","message":"Debug message","timestamp":"2023-08-26T14:53:18.852Z"}
+{"level":"silly","message":"Silly message","timestamp":"2023-08-26T14:53:18.852Z"}
+{"level":"error","message":"Error message","timestamp":"2023-08-26T16:45:57.895Z"}
+{"level":"warn","message":"Warning message","timestamp":"2023-08-26T16:45:57.896Z"}
+{"level":"info","message":"Info message","timestamp":"2023-08-26T16:45:57.896Z"}
+{"level":"verbose","message":"Verbose message","timestamp":"2023-08-26T16:45:57.896Z"}
+{"level":"debug","message":"Debug message","timestamp":"2023-08-26T16:45:57.897Z"}
+{"level":"silly","message":"Silly message","timestamp":"2023-08-26T16:45:57.897Z"}
