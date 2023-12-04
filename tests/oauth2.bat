@@ -1,5 +1,5 @@
 set CLIENT_ID=106182037141465471014
-set CLIENT_SECRET=68b50b947a43f91dfd25ac1125c47e2486abd89e
+set CLIENT_SECRET=
 set SCOPE=https://www.googleapis.com/auth/cloud-platform
 set ENDPOINT=https://accounts.google.com/o/oauth2/v2/auth
 
