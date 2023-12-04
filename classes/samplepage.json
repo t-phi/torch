@@ -1,0 +1,27 @@
+{ "meta": {
+    "type": "dædalus",
+    "version": "1.0",
+    "servicetype":  "web",
+    "config_type": "page"
+  },
+  "data": {
+    "id":     "three-001-four",
+    "lang":   "one",
+    "brand":  "two",
+    "projectCode": "",
+    "inputs": [
+      {"name": "a01", "value": "b01", "display_value": "c01", "selected": 1},
+      {"name": "a02", "value": "b01", "display_value": "c01", "selected": 1},
+      {"name": "a03", "value": "b01", "display_value": "c01", "selected": 1},
+      {"name": "a04", "value": "b01", "display_value": "c01", "selected": 1},
+      {"name": "a05", "value": "b01", "display_value": "c01", "selected": 1}
+    ],
+    "errors": [
+      {"name": "z06", "value": "b01", "input_name": "a01", "display_value": "c01", "selected": 1},
+      {"name": "z07", "value": "b01", "input_name": "a01", "display_value": "c01", "selected": 1},
+      {"name": "z08", "value": "b01", "input_name": "a01", "display_value": "c01", "selected": 1},
+      {"name": "z09", "value": "b01", "input_name": "a01", "display_value": "c01", "selected": 1},
+      {"name": "z10", "value": "b01", "input_name": "a01", "display_value": "c01", "selected": 1}
+    ]
+  }
+}
